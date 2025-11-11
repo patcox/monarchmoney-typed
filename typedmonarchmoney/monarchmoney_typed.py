@@ -3,9 +3,9 @@
 import asyncio
 from typing import List, Optional
 
-import monarchmoney.monarchmoney
-from monarchmoney import MonarchMoney
-from monarchmoney.monarchmoney import DEFAULT_RECORD_LIMIT
+from ..monarchmoney import monarchmoney
+from ..monarchmoney import MonarchMoney
+from ..monarchmoney.monarchmoney import DEFAULT_RECORD_LIMIT, SESSION_FILE
 
 from .models import (
     MonarchAccount,
@@ -18,7 +18,7 @@ from .models import (
 class TypedMonarchMoney(MonarchMoney):
     def __init__(
         self,
-        session_file: str = monarchmoney.monarchmoney.SESSION_FILE,
+        session_file: str = SESSION_FILE,
         timeout: int = 10,
         token: Optional[str] = None,
     ) -> None:
